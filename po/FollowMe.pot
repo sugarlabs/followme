@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-12 18:09-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: activity/activity.info:2
+msgid "Follow Me"
+msgstr ""
+
+#: activity.py:62
+msgid "Start"
+msgstr ""
+
+#: activity.py:68 dist/FollowMe.activity/activity.py:56
+msgid "Repeat"
+msgstr ""
+
+#: activity.py:80 dist/FollowMe.activity/activity.py:68
+msgid "Stop"
+msgstr ""
+
+#: activity.py:140 dist/FollowMe.activity/activity.py:135
+msgid "Slow down"
+msgstr ""
+
+#: activity.py:156 dist/FollowMe.activity/activity.py:150
+msgid "Speed up"
+msgstr ""
+
+#: dist/FollowMe.activity/activity.py:50
+msgid "Draw"
+msgstr ""
