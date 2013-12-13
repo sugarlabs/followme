@@ -115,8 +115,6 @@ def init():  # called by main()
     global wrong, player_n, best, level
     global max_w, max_h, green
     wrong_img = utils.load_image('wrong.png', True)
-    wrong_ind = 0
-    right_ind = 0
     man = utils.load_image('man.png', True)
     man_x0 = sx(25.5)
     man_y0 = sy(18.31)

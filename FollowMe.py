@@ -10,8 +10,8 @@
 
 """
 
+from gi.repository import Gtk
 import sys
-import gtk
 import pygame
 
 import g
@@ -211,7 +211,7 @@ class FollowMe:
     def set_delay(self, value=None):
         if value is None:
             self.aim.glow_time = (4 - g.level) * 500 - 300
-            self.aim.delay=(4 - g.level) * 330
+            self.aim.delay = (4 - g.level) * 330
         else:
             self.aim.glow_time = value
             self.aim.delay = int(value * 1.5)
@@ -221,8 +221,8 @@ class FollowMe:
         while flushing:
             flushing = False
             if self.journal:
-                while gtk.events_pending():
-                    gtk.main_iteration()
+                while Gtk.events_pending():
+                    Gtk.main_iteration()
             for event in pygame.event.get():
                 flushing = True
 
@@ -269,8 +269,8 @@ class FollowMe:
         while going:
             if self.journal:
                 # Pump GTK messages.
-                while gtk.events_pending():
-                    gtk.main_iteration()
+                while Gtk.events_pending():
+                    Gtk.main_iteration()
 
             # Pump PyGame messages.
             for event in pygame.event.get():
@@ -335,7 +335,7 @@ if __name__ == '__main__':
     pygame.init()
     pygame.display.set_mode((1024, 768), pygame.FULLSCREEN)
     global colors
-    game = FollowMe(([0,  255,  255],  [0,  255,  0]))
+    game = FollowMe(([0, 255, 255], [0, 255, 0]))
     game.journal = False
     game.run()
     pygame.display.quit()
