@@ -1,0 +1,8 @@
+[Activity]
+name = Follow Me
+activity_version = 24.2
+host_version = 1
+bundle_id = org.laptop.community.FollowMe
+icon = activity
+show_launcher = yes
+exec = sugar-activity activity.PeterActivity

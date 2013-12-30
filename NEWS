@@ -1,0 +1,14 @@
+24.2
+
+* Fix non-Sugar version
+* Add car image
+
+24.1
+
+* Sharing disabled
+* pep8 clean up
+
+24
+
+* Aggressive Sugar stylizing
+* Handle screen rotation
