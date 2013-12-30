@@ -1,4 +1,4 @@
 followme
 ========
 
-Port of Peter Hewitt follow me game
+Gtk3 port of FollowMe activity
