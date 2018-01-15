@@ -176,6 +176,6 @@ class PeterActivity(activity.Activity):
             self._speed_range.set_value(self.LOWER)
 
     def _speed_change_cb(self, button=None):
-        logging.debug(self._adjustment.value)
-        self.game.set_delay(self._adjustment.value)
+        logging.debug(self._adjustment.get_value())
+        self.game.set_delay(self._adjustment.get_value())
         return True
