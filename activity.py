@@ -13,6 +13,8 @@
 from gettext import gettext as _
 import logging
 
+import gi
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from gi.repository import Gdk
 import pygame
@@ -100,6 +102,8 @@ class PeterActivity(activity.Activity):
         self.game.set_buttons(green, back)
         self._pygamecanvas.run_pygame(self.game.run)
 
+    def get_preview(self):
+        return self._pygamecanvas.get_preview()
 
     def __configure_cb(self, event):
         ''' Screen size has changed '''
@@ -136,7 +140,7 @@ class PeterActivity(activity.Activity):
                                          self._speed_stepper_down_cb)
         self._speed_stepper_down.show()
 
-        self._adjustment = Gtk.Adjustment(
+        self._adjustment = Gtk.Adjustment.new(
             800, self.LOWER, self.UPPER, 50, 200, 0)
         self._adjustment.connect('value_changed', self._speed_change_cb)
         self._speed_range = Gtk.HScale.new(self._adjustment)
@@ -174,6 +178,6 @@ class PeterActivity(activity.Activity):
             self._speed_range.set_value(self.LOWER)
 
     def _speed_change_cb(self, button=None):
-        logging.debug(self._adjustment.value)
-        self.game.set_delay(self._adjustment.value)
+        logging.debug(self._adjustment.get_value())
+        self.game.set_delay(self._adjustment.get_value())
         return True

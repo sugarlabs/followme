@@ -10,7 +10,6 @@
 """
 import os
 import sys
-import copy
 import random
 import logging
 import pygame
@@ -50,7 +49,7 @@ def load():
         dir = ''
     fname = os.path.join(dir, 'data', 'follow.dat')
     try:
-        f = open(fname,  'r')
+        f = open(fname, 'r')
     except Exception as e:
         logging.error('Could not open %s: %s' % (fname, e))
         return None
