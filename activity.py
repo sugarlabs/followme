@@ -82,8 +82,6 @@ class PeterActivity(activity.Activity):
         toolbox.toolbar.insert(stop, -1)
         stop.show()
 
-        toolbox.show()
-        self.set_toolbar_box(toolbox)
 
         # Create the game instance.
         self.game = FollowMe.FollowMe(colors, sugar=True)
@@ -97,6 +95,9 @@ class PeterActivity(activity.Activity):
 
         Gdk.Screen.get_default().connect('size-changed',
                                              self.__configure_cb)
+
+        toolbox.show()
+        self.set_toolbar_box(toolbox)
 
         # Start the game running.
         self.game.set_buttons(green, back)
