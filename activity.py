@@ -13,6 +13,9 @@
 from gettext import gettext as _
 import logging
 
+import gi
+gi.require_version('Gtk', '3.0')
+
 from gi.repository import Gtk
 from gi.repository import Gdk
 import pygame
@@ -87,25 +90,25 @@ class PeterActivity(activity.Activity):
         self.game = FollowMe.FollowMe(colors, sugar=True)
 
         # Build the Pygame canvas.
-        self._pygamecanvas = sugargame.canvas.PygameCanvas(self)
+        self.game.canvas = sugargame.canvas.PygameCanvas(self, \
+            main=self.game.run, modules=[pygame.display, pygame.font])
+
         # Note that set_canvas implicitly calls
         # read_file when resuming from the Journal.
-        self.set_canvas(self._pygamecanvas)
-        self.game.canvas = self._pygamecanvas
+        self.set_canvas(self.game.canvas)
 
         Gdk.Screen.get_default().connect('size-changed',
                                              self.__configure_cb)
 
-        # Start the game running.
         self.game.set_buttons(green, back)
-        self._pygamecanvas.run_pygame(self.game.run)
+        # Start the game running.
 
     def get_preview(self):
-        return self._pygamecanvas.get_preview()
+        return self.game.canvas.get_preview()
 
     def __configure_cb(self, event):
         ''' Screen size has changed '''
-        logging.debug(self._pygamecanvas.get_allocation())
+        logging.debug(self.game.canvas.get_allocation())
         pygame.display.set_mode((Gdk.Screen.width(),
                                  Gdk.Screen.height() - GRID_CELL_SIZE),
                                 pygame.RESIZABLE)
