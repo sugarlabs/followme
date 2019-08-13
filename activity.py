@@ -113,6 +113,7 @@ class PeterActivity(activity.Activity):
                                  Gdk.Screen.height() - GRID_CELL_SIZE),
                                 pygame.RESIZABLE)
         self.game.save_pattern()
+        self.game.g_init()
         self._speed_range.set_value(800)
 
     def read_file(self, file_path):
