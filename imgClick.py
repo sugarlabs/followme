@@ -1,4 +1,4 @@
-#imgClick.py
+# imgClick.py
 """
     Copyright (C) 2010  Peter Hewitt
 

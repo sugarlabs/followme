@@ -90,15 +90,18 @@ class PeterActivity(activity.Activity):
         self.game = FollowMe.FollowMe(colors, sugar=True)
 
         # Build the Pygame canvas.
-        self.game.canvas = sugargame.canvas.PygameCanvas(self, \
-            main=self.game.run, modules=[pygame.display, pygame.font])
+        self.game.canvas =\
+            sugargame.canvas.PygameCanvas(self,
+                                          main=self.game.run,
+                                          modules=[pygame.display,
+                                                   pygame.font])
 
         # Note that set_canvas implicitly calls
         # read_file when resuming from the Journal.
         self.set_canvas(self.game.canvas)
 
         Gdk.Screen.get_default().connect('size-changed',
-                                             self.__configure_cb)
+                                         self.__configure_cb)
 
         self.game.set_buttons(green, back)
         # Start the game running.

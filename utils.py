@@ -17,7 +17,7 @@ import pygame
 import g
 import load_save
 
-#constants
+# constants
 RED, BLUE, GREEN = (255, 0, 0), (0, 0, 255), (0, 255, 0)
 BLACK, WHITE = (0, 0, 0), (255, 255, 255)
 CYAN, ORANGE, CREAM = (0, 255, 255), (255, 165, 0), (255, 255, 192)
@@ -79,7 +79,7 @@ def load_image(file1, alpha=False, subdir=''):  # eg subdir = 'glow'
     fname = os.path.join(data, file1)
     try:
         img = pygame.image.load(fname)
-    except:
+    except IOError:
         print "Peter says: Can't find " + fname
         exit()
     if alpha:
@@ -92,7 +92,7 @@ def load_image(file1, alpha=False, subdir=''):  # eg subdir = 'glow'
         try:
             img = pygame.transform.smoothscale(
                 img, (int(g.imgf * w), int(g.imgf * h)))
-        except:
+        except IndexError:
             img = pygame.transform.scale(
                 img, (int(g.imgf * w), int(g.imgf * h)))
     return img
@@ -184,7 +184,7 @@ def mouse_on_img(img, (x, y)):  # x, y = top left
         return False
     try:  # in case out of range
         col = img.get_at((int(mx - x), int(my - y)))
-    except:
+    except IndexError:
         return False
     if col[3] < 10:
         return False

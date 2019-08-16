@@ -96,7 +96,7 @@ def init():  # called by main()
         offset = 0
     clock = pygame.time.Clock()
     factor = float(h) / 24  # measurement scaling factor (32x24 =
-                            # design units)
+    # design units)
     offset = (w - 4 * h / 3) / 2  # we assume 4:3 - centre on widescreen
     imgf = float(h) / 900  # image scaling factor - images built for 1200x900
     if pygame.font:

@@ -35,12 +35,6 @@ class FollowMe:
         g.screen.fill(self.colors[1])
         if self.aim.running or self.aim.glow_active:
             pass
-        else:
-            x = g.imgs[g.green].x
-            y = g.imgs[g.green].y
-            w = g.imgs[g.green].w
-            h = g.imgs[g.green].h
-            # pygame.draw.rect(g.screen, self.colors[0], (x,y,w,h), g.sy(.2))
         for img in g.imgs:  # img from ImgClick (centred)
             img.draw(g.screen)
         if g.wrong:
@@ -330,6 +324,7 @@ class FollowMe:
                 pygame.display.flip()
                 g.redraw = False
             g.clock.tick(40)
+
 
 if __name__ == '__main__':
     pygame.init()

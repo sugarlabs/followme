@@ -57,7 +57,7 @@ class Simon:  # most methods only used by aim instance
                 break
             if r != self.list1[0]:
                 break
-        #if len(self.list1)>1: r = self.list1[0]+1 ###
+        # if len(self.list1)>1: r = self.list1[0]+1 ###
         self.list1.append(r)
         self.play()
         self.started = True
