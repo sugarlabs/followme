@@ -2,8 +2,10 @@
 name = Follow Me
 activity_version = 25
 host_version = 1
+license = GPLv3+
 bundle_id = org.laptop.community.FollowMe
 icon = activity
 show_launcher = yes
 exec = sugar-activity activity.PeterActivity
 category = game
+repository = https://github.com/sugarlabs/followme.git
