@@ -1,6 +1,5 @@
-# activity.py
-# my standard link between sugar and my activity
 """
+    Follow Me activity for Sugar
     Copyright (C) 2010  Peter Hewitt
 
     This program is free software: you can redistribute it and/or modify
@@ -8,6 +7,20 @@
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    --
+
+    A simple little game which requires good concentration.  Pupils
+    are presented with an ever increasing sequence of pictures which
+    they have to imitate.  The Best Score is 'remembered' so the game
+    provides a continual challenge to improve. My best is 40.
 """
 
 from gettext import gettext as _
