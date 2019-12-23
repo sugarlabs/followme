@@ -124,8 +124,8 @@ def shuffle(lst):
     return lt
 
 
-def centre_blit(screen, img, xxx_todo_changeme, angle=0):  # rotation is clockwise
-    (cx, cy) = xxx_todo_changeme
+def centre_blit(screen, img, position, angle=0):  # rotation is clockwise
+    (cx, cy) = position
     img1 = img
     if angle != 0:
         img1 = pygame.transform.rotate(img, -angle)
@@ -133,9 +133,9 @@ def centre_blit(screen, img, xxx_todo_changeme, angle=0):  # rotation is clockwi
     screen.blit(img1, (cx - rect.width / 2, cy - rect.height / 2))
 
 
-def text_blit(screen, s, font, xxx_todo_changeme1, xxx_todo_changeme2):
-    (cx, cy) = xxx_todo_changeme1
-    (r, g, b) = xxx_todo_changeme2
+def text_blit(screen, s, font, position, color):
+    (cx, cy) = position
+    (r, g, b) = color 
     text = font.render(s, True, (0, 0, 0))
     rect = text.get_rect()
     rect.centerx = cx + 2
@@ -149,9 +149,9 @@ def text_blit(screen, s, font, xxx_todo_changeme1, xxx_todo_changeme2):
     return rect
 
 
-def text_blit1(screen, s, font, xxx_todo_changeme3, xxx_todo_changeme4):
-    (x, y) = xxx_todo_changeme3
-    (r, g, b) = xxx_todo_changeme4
+def text_blit1(screen, s, font, position, color):
+    (x, y) = position
+    (r, g, b) = color
     text = font.render(s, True, (r, g, b))
     rect = text.get_rect()
     rect.x = x
@@ -162,8 +162,8 @@ def text_blit1(screen, s, font, xxx_todo_changeme3, xxx_todo_changeme4):
 # m is the message
 # d is the # of pixels in the border around the text
 # (cx, cy)  =  coords centre - (0, 0) means use screen centre
-def message(screen, font, m, xxx_todo_changeme5=(0, 0), d=20):
-    (cx, cy) = xxx_todo_changeme5
+def message(screen, font, m, position=(0, 0), d=20):
+    (cx, cy) = position
     if m != '':
         if pygame.font:
             text = font.render(m, True, (255, 255, 255))
@@ -184,8 +184,8 @@ def message(screen, font, m, xxx_todo_changeme5=(0, 0), d=20):
             screen.blit(text, rect)
 
 
-def mouse_on_img(img, xxx_todo_changeme6):  # x, y = top left
-    (x, y) = xxx_todo_changeme6
+def mouse_on_img(img, position):  # x, y = top left
+    (x, y) = position
     w = img.get_width()
     h = img.get_height()
     mx, my = g.pos
@@ -206,14 +206,14 @@ def mouse_on_img(img, xxx_todo_changeme6):  # x, y = top left
     return True
 
 
-def mouse_on_img1(img, xxx_todo_changeme7):
-    (cx, cy) = xxx_todo_changeme7
+def mouse_on_img1(img, position):
+    (cx, cy) = position
     xy = centre_to_top_left(img, (cx, cy))
     return mouse_on_img(img, xy)
 
 
-def mouse_on_img_rect(img, xxx_todo_changeme8):
-    (cx, cy) = xxx_todo_changeme8
+def mouse_on_img_rect(img, position):
+    (cx, cy) = position
     w2 = img.get_width() / 2
     h2 = img.get_height() / 2
     x1 = cx - w2
@@ -255,9 +255,9 @@ def display_score():
                     (x - d + g.sy(.05), y + h / 2 - g.sy(.2)))
 
 
-def display_number(n, xxx_todo_changeme9, font, colour=BLACK, bgd=None,
+def display_number(n, position, font, colour=BLACK, bgd=None,
                    outline_font=None):
-    (cx, cy) = xxx_todo_changeme9
+    (cx, cy) = position
     if pygame.font:
         if bgd is None:
             text = font.render(str(n), True, colour)
@@ -269,23 +269,23 @@ def display_number(n, xxx_todo_changeme9, font, colour=BLACK, bgd=None,
         centre_blit(g.screen, text, (cx, cy))
 
 
-def display_number1(n, xxx_todo_changeme10, font, colour=BLACK):
-    (x, cy) = xxx_todo_changeme10
+def display_number1(n, position, font, colour=BLACK):
+    (x, cy) = position
     if pygame.font:
         text = font.render(str(n), True, colour)
         y = cy - text.get_height() / 2
         g.screen.blit(text, (x, y))
 
 
-def top_left_to_centre(img, xxx_todo_changeme11):
-    (x, y) = xxx_todo_changeme11
+def top_left_to_centre(img, position):
+    (x, y) = position
     cx = x + img.get_width() / 2
     cy = y + img.get_height() / 2
     return (cx, cy)
 
 
-def centre_to_top_left(img, xxx_todo_changeme12):
-    (cx, cy) = xxx_todo_changeme12
+def centre_to_top_left(img, position):
+    (cx, cy) = position
     x = cx - img.get_width() / 2
     y = cy - img.get_height() / 2
     return (x, y)
