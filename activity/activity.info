@@ -6,6 +6,6 @@ license = GPLv3+
 bundle_id = org.laptop.community.FollowMe
 icon = activity
 show_launcher = yes
-exec = sugar-activity activity.PeterActivity
+exec = sugar-activity3 activity.PeterActivity
 category = game
 repository = https://github.com/sugarlabs/followme.git
