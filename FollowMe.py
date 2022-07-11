@@ -259,8 +259,8 @@ class FollowMe:
         else:
             bx = g.sx(22.42)
             by = g.sy(20.8)
-            buttons.Button('green', (bx, by), True)
-            buttons.Button('back', (bx, by), True)
+            buttons.Button('green', bx, by, True)
+            buttons.Button('back', bx, by, True)
             buttons.off('back')
             self.slider = slider.Slider(g.sx(9), g.sy(20.8), 3, utils.BLUE)
         self.rc = rc_skip_last.RC(3, 5)

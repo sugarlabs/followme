@@ -147,7 +147,7 @@ def init():  # called by main()
         cx = sx(3.2)
         for c in range(1, 6):
             img = utils.load_image(str(i) + '.png', True)
-            imgC = imgClick.ImgClick(img, (cx, cy), True)
+            imgC = imgClick.ImgClick(img, cx, cy, True)
             if imgC.w > max_w:
                 max_w = imgC.w
             if imgC.h > max_h:

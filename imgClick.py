@@ -27,7 +27,7 @@ import g
 
 
 class ImgClick:  # for clickable images
-    def __init__(self, img, (x1, y1), centre=False):
+    def __init__(self, img, x1, y1, centre=False):
         w = img.get_width()
         h = img.get_height()
         x = x1
