@@ -1,6 +1,6 @@
 [Activity]
 name = Follow Me
-activity_version = 25
+activity_version = 26
 host_version = 1
 license = GPLv3+
 bundle_id = org.laptop.community.FollowMe
